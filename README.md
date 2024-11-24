@@ -13,3 +13,4 @@ In this version of the project, input your content and images, and the generator
 5. After installation, npm run dev
 
 The listing generator will be active at localhost:5173 
+You can use the images of Fitness tracker and Dumbbell for demonstration purposes.
