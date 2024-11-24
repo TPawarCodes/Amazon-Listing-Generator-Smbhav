@@ -14,4 +14,8 @@ In this version of the project, input your content and images, and the generator
 
 The listing generator will be active at localhost:5173 
 
-You can use the images of Fitness tracker and Dumbbell for demonstration purposes.
+You can use the given images of Fitness tracker and Dumbbell or any image on your device for demonstration purposes.
+
+## Future Work
+
+Currently the user needs to input content to the generator, in the coming future, user will only enter the product social media post URL and through web scraping the listing will be generated and the product will be listed on amazon. 
