@@ -9,15 +9,31 @@ const genAI = new GoogleGenerativeAI(config.geminiApiKey);
 export async function generateListing(content: string): Promise<ListingData> {
   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
-  const prompt = `Generate an Amazon product listing based on this social media content: ${content}. 
-                 Format the response as strict and valid JSON with the following structure:
-                 {
-                   "title": "product title",
-                   "description": "detailed description",
-                   "bulletPoints": ["point1", "point2", "point3", "point4", "point5"],
-                   "keywords": ["keyword1", "keyword2", "keyword3"]
-                 }
-                 Double-check that all string fields use double quotes, and the JSON is properly escaped.`;
+  const prompt = `
+      Analyze this social media post URL: ${url}
+      
+      Generate a comprehensive Amazon product listing with the following information:
+      1. Product Title (max 200 characters)
+      2. Key Benefits (5 bullet points)
+      3. Product Description (detailed paragraph)
+      4. Target Audience
+      5. Brand Name
+      6. Category
+      7. Search Keywords (comma-separated)
+      
+      Format the response as a JSON object with these exact keys:
+      {
+        "title": "",
+        "benefits": [],
+        "description": "",
+        "targetAudience": "",
+        "brand": "",
+        "category": "",
+        "keywords": ""
+      }
+      
+      Ensure the content is professional, SEO-friendly, and follows Amazon's style guidelines.
+    `;
 
   try {
     const result = await model.generateContent(prompt);
