@@ -10,7 +10,7 @@ export async function generateListing(content: string): Promise<ListingData> {
   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
   const prompt = `
-      Analyze this social media post URL: ${url}
+      Analyze this social media post URL: ${content}
       
       Generate a comprehensive Amazon product listing with the following information:
       1. Product Title (max 200 characters)
